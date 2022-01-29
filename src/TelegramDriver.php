@@ -316,9 +316,9 @@ class TelegramDriver extends HttpDriver
             'inline_keyboard' => [],
         ];
         if ($this->config->get('throw_http_exceptions')) {
-            return $this->postWithExceptionHandling($this->buildApiUrl('editMessageReplyMarkup'), [], $parameters);
+            return $this->postWithExceptionHandling($this->buildApiUrl('deleteMessage'), [], $parameters);
         }
-        return $this->http->post($this->buildApiUrl('editMessageReplyMarkup'), [], $parameters);
+        return $this->http->post($this->buildApiUrl('deleteMessage'), [], $parameters);
     }
 
     /**
