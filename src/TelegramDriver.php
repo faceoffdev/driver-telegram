@@ -199,7 +199,8 @@ class TelegramDriver extends HttpDriver
             return Answer::create($callback->get('data'))
                 ->setInteractiveReply(true)
                 ->setMessage($message)
-                ->setValue($callback->get('data'));
+                ->setValue($callback->get('data'))
+                ->setCallbackId($callback->get('id'));
         }
 
         return Answer::create($message->getText())->setMessage($message);
